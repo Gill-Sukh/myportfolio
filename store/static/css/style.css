@@ -1,0 +1,52 @@
+body{
+    background: rgb(243, 198, 152);
+}
+
+
+.login{
+    color: navy;
+    text-align: center;
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    background: darkseagreen;
+    border-radius: 20px;
+}
+input,.submit{
+    width: 90%;
+    height: 40px;
+    margin: 10px 10px;
+}
+.submit{
+    border-radius: 3%;
+    background: coral;
+    box-shadow: 5px 5px 9px black;
+    color: white;
+}
+.submit:hover{
+    background: cornflowerblue;
+    
+}
+body::before {
+    display: block;
+    content: '';
+    height: 60px;
+}
+a:link {
+    text-decoration: none;
+  }
+a{
+    color: black;
+}
+.product{
+    height: 400px;
+    box-shadow: 2px 2px 3px black;
+
+}
+
+@media(min-width: 768px){
+    .news-input{
+        width: 50%;
+
+    }
+}

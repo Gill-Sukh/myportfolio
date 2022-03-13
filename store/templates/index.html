@@ -1,0 +1,299 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+<!-- showcase -->
+<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h2>100% genuine Products</h2>
+                <h1>Tasty & Healthy Organic Food</h1>
+                <button class="btn btn-primary btn-lg">
+                    <a href="#all_products">EXPLORE PRODUCTS</a> </button>
+            </div>
+            <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'img/23.png' %}" alt="">
+        </div>
+
+    </div>
+</section>
+<!-- Boxes -->
+<section class="p-5">
+    <div class="row text-center g-5">
+        <div class="col-md-6">
+            <div class="card bg-light ">
+                <a href="#all_products"><img class="img fluid" src="{% static 'img/13.png' %}" alt=""></a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-body ">
+                    <a href="#all_products"><img class='img-fluid' src="{% static 'img/14.png' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="card bg-light ">
+
+            </div>
+            <div class="card bg-light">
+                <div class="card-body ">
+                    <a href="#all_products"><img class='img-fluid' src="{% static 'img/15.png' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="card bg-light ">
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Products -->
+<section class="p-5">
+    <div class="container bg-light">
+        <div class="row text-center g-5">
+            <div id="all_products" class="col-12 h1 all_products">OUR PRODUCTS</div>
+            
+            {% for product in products %}
+            <div class="card-group col-md-3 p-4">
+                
+                
+                  <div class="card" id="{{ product.id }}">
+                    <img class="card-img-top "  src="{{ product.image.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="text-success">{{ product.name }}</span></h5>
+                        <p class="card-text"><span class="text-danger">{{ product.price }}</span>$</p>
+                      </div>
+                    <div class="card-footer bg-transparent border-success">
+                        {% if product|is_in_cart:request.session.cart %}
+						<div class="row no-gutters">
+							<form action="/#{{product.id}}" class="col-2 " method="post">
+								{% csrf_token %}
+								<input hidden type="text" name='product' value='{{product.id}}'>
+								<input hidden type="text" name='remove' value='True'>
+								<input type="submit" value=" - " class="btn btn-block btn-light border-right">
+							</form>
+							<div class="text-center col">{{product|cart_quantity:request.session.cart}} in Cart</div>
+							<form action="/#{{product.id}}" class="col-2 " method="post">
+								{% csrf_token %}
+								<input hidden type="text" name='product' value='{{product.id}}'>
+								<input type="submit" value="+" class="btn btn-block btn-light border-left">
+							</form>
+						</div>
+						{% else %}
+						<form action="" method="POST" class="btn-block">
+							{% csrf_token %}
+							<input hidden type="text" name='product' value='{{product.id}}'>
+							<input type="submit" class="float-right btn btn-light  form-control"
+								value="Add To Cart">
+						</form>
+						{% endif %}
+
+                    </div>
+                  </div>
+                
+            </div>
+            {% endfor %}
+            
+
+        </div>
+
+    </div>
+
+</section>
+<!-- offer product -->
+<section class="bg-light  p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container ">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'img/111.png' %}" alt="">
+            <div>
+                <h2><span class="text-success">Todays Hot Deal</span></h2>
+                <h1 class='text-dark'>Original Stock Honey
+                    Combo Package</h1>
+                <button class="btn btn-primary btn-lg">SHOP NOW</button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Clients Feedbacks. -->
+
+<section class="p-5 bg-info">
+    <div>
+        <h4 class="text-center"> <span class="text-success">// TESTIMONIALS</span></h4>
+        <h1 class="text-center p-5">Clients Feedbacks <span class="text-success">.</span></h1>
+    </div>
+    <div class="card-group ">
+        <div class="card m-3">
+            <div class="card mb-3 m-3 " style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 ">
+                        <img src="{% static 'img/6.jpg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card m-3">
+            <div class="card mb-3 m-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 ">
+                        <img src="{% static 'img/6.jpg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card m-3">
+            <div class="card mb-3 m-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 ">
+                        <img src="{% static 'img/6.jpg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<!-- Latest Blog -->
+<section class="p-5">
+    <div>
+        <h1 class="text-center p-5"> <span class="text-success">Leatest Blog</span></h1>
+
+    </div>
+    <div class="card-group">
+        <div class="card">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/3.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- detail -->
+
+<section class="p-5 ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'img/1111.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <h5>Curated Products</h5>
+                    </div>
+                    <div>
+                        <p>Provide Curated Products for all product over $100</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'img/1211.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <h5>Handmade</h5>
+                    </div>
+                    <div>
+                        <p>We ensure the product quality that is our main goal</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'img/1311.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <h5>Natural Food</h5>
+                    </div>
+                    <div>
+                        <p>Return product within 3 days for any product you buy</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'img/1411.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <h5>Free home delivery</h5>
+                    </div>
+                    <div>
+                        <p>We ensure the product quality that you can trust easily</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

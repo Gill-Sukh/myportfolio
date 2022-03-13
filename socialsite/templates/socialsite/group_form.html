@@ -1,0 +1,11 @@
+{% extends "socialsite/group_base.html" %} {% load bootstrap4 %} {% load static
+%} {% block group_content %}
+<div class="container">
+  <h4>Create A New Group</h4>
+  <form method="POST" action="#thisissample" id="groupForm">
+    {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+    <button type="submit" class="btn btn-primary btn-large">Create</button>
+    {% endbuttons %}
+  </form>
+</div>
+{% endblock %}

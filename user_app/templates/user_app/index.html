@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sukhvir</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/letter-s.png' %}" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <noscript
+      ><link rel="stylesheet" href="{% static 'css/noscript.css' %}"
+    /></noscript>
+  </head>
+  <body class="is-preload landing">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1 id="logo"><a href="index.html">Sukhvir Gill</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li>
+              <a href="{% static 'sukhvircv.docx' %}" class="button primary"
+                >Get CV</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Banner -->
+      <section id="banner">
+        <div class="content">
+          <header>
+            <h2>Welcome</h2>
+            <h3>My Name Sukhvir Singh Gill,</h3>
+            <p>I am Full Stack Developer from Punjab,India.</p>
+          </header>
+          <span class="image"
+            ><img src="{% static 'images/Sukhvir.jpg' %}" alt=""
+          /></span>
+        </div>
+        <a href="#one" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- One -->
+      <section id="one" class="spotlight style1 bottom">
+        <span class="image fit main"
+          ><img src="{% static 'images/codingone.jfif' %}" alt=""
+        /></span>
+        <div class="content">
+          <div class="container">
+            <div class="row">
+              <div class="col-4 col-12-medium">
+                <header>
+                  <h2>About Me</h2>
+                </header>
+              </div>
+              <div class="col-4 col-12-medium">
+                <p>Hey there,I'm a self taught Programmer with a big dream to create an enjoyable works. I love to learn all things about Computer and Digital life. I enjoy taking complex problems and turning them into simple and efficient code.</p>
+              </div>
+              <div class="col-4 col-12-medium">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#two" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Two -->
+      <section id="two" class="spotlight style2 right">
+        <span class="image fit main"
+          ><img src="{% static 'images/logos.jpg' %}" alt=""
+        /></span>
+        <div class="content">
+          <header>
+            <h2>Front-End Technologies</h2>
+            <p>Knowledge</p>
+          </header>
+          <ul>
+            <li><h4>HTML</h4></li>
+            <li><h4>CSS</h4></li>
+            <li><h4>JS</h4></li>
+            <li>...</li>
+          </ul>
+        </div>
+        <a href="#three" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Three -->
+      <section id="three" class="spotlight style3 left">
+        <span class="image fit main bottom"
+          ><img src="{% static 'images/Pythonpic.png' %}" alt=""
+        /></span>
+        <div class="content">
+          <header>
+            <h2>Back-End Technologies</h2>
+            <p>Knowledge</p>
+          </header>
+          <ul>
+            <li><h4>Python</h4></li>
+            <li>...</li>
+          </ul>
+        </div>
+        <a href="#four" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Four -->
+      <section id="four" class="wrapper style1 special fade-up">
+        <div class="container">
+          <header class="major">
+            <h2>Projects</h2>
+            <p>These Projects Were Completed During Learning Skills.</p>
+            <p>For Codes of Project You Can Visit To My Github Account</p>
+          </header>
+          <div class="box alt">
+            <div class="row gtr-uniform">
+              <section class="col-4 col-6-medium col-12-xsmall">
+                <span class="icon solid alt major"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg></span>
+                <h3>STORE</h3>
+                <p>
+                  This project for online shopping. We can purchase things
+                  online.
+                </p>
+                <footer class="major">
+                  <ul class="actions special">
+                    <li>
+                      <a href="{% url 'store:store' %}" class="button"
+                        >Open Site
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-arrow-up-right-square"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+              </section>
+              <section class="col-4 col-6-medium col-12-xsmall">
+                <span class="icon solid alt major fa-comment" id="projects"></span>
+                <h3>Social Site</h3>
+                <p>This is social media website,we can upload post in group.</p>
+                <footer class="major">
+                  <ul class="actions special">
+                    <li>
+                      <a href="{% url 'socialsite:socialhome' %}" class="button"
+                        >Open Site
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-arrow-up-right-square"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+              </section>
+              <section class="col-4 col-6-medium col-12-xsmall">
+                <span class="icon solid alt major "><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                  <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                </svg></span>
+                <h3>TO DO</h3>
+                <p>
+                  This is a task management application. It allows users to
+                  manage their tasks.
+                </p>
+                <footer class="major">
+                  <ul class="actions special">
+                    <li>
+                      <a href="{% url 'todo:todohome' %}" class="button"
+                        >Open Site
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-arrow-up-right-square"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+              </section>
+            </div>
+          </div>
+          <footer class="major">
+            <ul class="actions special">
+              <li><a href="#home" class="button">Back</a></li>
+            </ul>
+          </footer>
+        </div>
+      </section>
+
+      <!-- Five -->
+      <!-- <section id="five" class="wrapper style2 special fade">
+        <div class="container">
+          <header>
+            <h2>Magna faucibus lorem diam</h2>
+            <p>
+              Ante metus praesent faucibus ante integer id accumsan eleifend
+            </p>
+          </header>
+          <form method="post" action="#" class="cta">
+            <div class="row gtr-uniform gtr-50">
+              <div class="col-8 col-12-xsmall">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email Address"
+                />
+              </div>
+              <div class="col-4 col-12-xsmall">
+                <input type="submit" value="Get Started" class="fit primary" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section> -->
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://twitter.com/SukhvirsinghGi5"
+              class="icon brands alt fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/sukhvir.gill.904/"
+              class="icon brands alt fa-facebook-f"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/sukhvir-gill-3a8a711b2/"
+              class="icon brands alt fa-linkedin-in"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/gill__0028/"
+              class="icon brands alt fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Gill-Sukh"
+              class="icon brands alt fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>Sukhvir Singh Gill.</li>
+          <li class="icon solid alt fa-envelope">
+            sukhvirbhatton@gmail.com</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

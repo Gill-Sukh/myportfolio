@@ -1,0 +1,10 @@
+{% extends 'todo/base.html' %} {% block body %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <h2>Are you sure this task is done?</h2>
+  <button type="submit">Confirm</button>
+  <a href="{% url 'todo:todohome' %}">Home</a>
+</form>
+
+{% endblock %}
